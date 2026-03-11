@@ -53,8 +53,6 @@
 3. 📦 **GitHave (跨端工具链)**：面向大众开发者的轻量级生态（含 App 客户端、VS Code 插件、Chrome 插件及 MCP/Skill 服务），实现多场景触达。
 4. ⚡ **FlashMemory (终端底层引擎)**：支持去中心化部署的 AI 上下文索引基础设施。
 
-> **🔗 附：[AI编程产品线的第一期研发计划(详情)](https://github.com/ZetaZeroHub)**
-
 ---
 
 ## 社区共建与招募
