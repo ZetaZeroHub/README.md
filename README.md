@@ -192,9 +192,9 @@ src/pages/AiChat/
 |:---|:---|
 | Go | 1.16+ |
 | PostgreSQL | 12+ |
-| Docker (可选) | 20+ |
+| Redis | 6.0+ |
 
-#### 步骤一：直接运行
+#### 部署步骤
 
 ```bash
 # 1. 克隆项目
@@ -205,39 +205,35 @@ cd githave-web/githave-gatway
 cp .env.example .env
 # 编辑 .env，至少配置以下必要项:
 #   DB_HOST=localhost
-#   DB_PORT=5432
+#   DB_PORT=6073
 #   DB_USER=postgres
 #   DB_PASSWORD=your_password
 #   DB_NAME=apigateway
+#   REDIS_HOST=127.0.0.1
+#   REDIS_PORT=6379
 #   JWT_SECRET=your_secure_jwt_secret
 
-# 3. 创建数据库 (PostgreSQL)
+# 3. 创建数据库并确保 Redis 运行
 createdb apigateway   # 或在 psql 中执行: CREATE DATABASE apigateway;
 
 # 4. 编译并启动
 go run main.go
-# 服务默认监听 :8080
-```
-
-#### 步骤二：Docker 部署
-
-```bash
-docker-compose up -d
+# 服务默认监听 :5202，助手服务监听 :5203
 ```
 
 #### 核心环境变量速查
 
 | 变量 | 说明 | 默认值 |
 |:---|:---|:---|
-| `DB_HOST` | PostgreSQL 主机 | — |
-| `DB_PORT` | PostgreSQL 端口 | 5432 |
-| `DB_USER` | 数据库用户 | — |
-| `DB_PASSWORD` | 数据库密码 | — |
-| `DB_NAME` | 数据库名 | — |
-| `JWT_SECRET` | JWT 签名密钥 | `"YourJWTSecret"` |
-| `GITHUB_CLIENT_ID` | GitHub OAuth2 | — |
-| `GOOGLE_CLIENT_ID` | Google OAuth2 | — |
-| `SMTP_HOST` | 邮件服务器 | `"smtp.example.com"` |
+| `PORT` | 主服务端口 | `5202` |
+| `ASSISTANT_PORT` | 助手服务端口 | `5203` |
+| `DB_HOST` | PostgreSQL 主机 | `localhost` |
+| `DB_PORT` | PostgreSQL 端口 | `6073` |
+| `DB_USER` | 数据库用户 | `postgres` |
+| `DB_NAME` | 数据库名 | `apigateway` |
+| `REDIS_HOST` | Redis 主机 | `127.0.0.1` |
+| `REDIS_PORT` | Redis 端口 | `6379` |
+| `JWT_SECRET` | JWT 签名密钥 | — |
 
 #### 后端核心目录结构
 
