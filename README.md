@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="https://github.com/ZetaZeroHub/.github/raw/main/profile/logo.svg" alt="ZetaZeroHub Logo" width="80" height="80" onerror="this.style.display='none'"/>
-
 # ζ0Hub · ZetaZeroHub
 
 **始于零，臻于极。**
