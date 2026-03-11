@@ -590,7 +590,7 @@ sh test_role_chat_compute_evaluate.sh  # 测试算力评估
 ```
 ┌──────────────┐     ┌──────────────────┐     ┌───────────────┐
 │ mlops-front  │────▶│ githave-gateway  │────▶│ cfn_chatbot   │
-│ :8373        │     │ :5202            │     │ :7863         │
+│ :8373/ai_chat│     │ :5202            │     │ :7863         │
 └──────────────┘     └──────────────────┘     └───────────────┘
 ```
 
@@ -599,7 +599,7 @@ sh test_role_chat_compute_evaluate.sh  # 测试算力评估
 1. **启动 cfn_chatbot**（端口 7863）
 2. **启动 githave-gateway**（端口 5202），在 `.env` 中配置 cfn_chatbot 的地址
 3. **启动 mlops-front**（端口 8373），在 `webpack.dev.js` 中配置代理指向 gateway
-4. 访问 `http://localhost:8373`，进入 AiChat 页面即可进行端到端对话
+4. 访问 `http://localhost:8373/ai_chat`，进入 AiChat 页面即可进行端到端对话
 
 ##### 4.3 验证清单
 
